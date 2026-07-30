@@ -1,0 +1,57 @@
+[project]
+name = "klashai-backend"
+version = "0.1.0"
+description = "KlashAI Backend API"
+authors = [
+    { name = "KlashAI Team", email = "dev@klashai.com" },
+]
+dependencies = [
+    "fastapi>=0.109.2",
+    "uvicorn[standard]>=0.27.1",
+    "sqlalchemy>=2.0.28",
+    "alembic>=1.13.1",
+    "psycopg2-binary>=2.9.9",
+    "redis>=5.0.1",
+    "celery>=5.3.6",
+    "python-multipart>=0.0.6",
+    "python-jose[cryptography]>=3.3.0",
+    "passlib[bcrypt]>=1.7.4",
+    "python-dotenv>=1.0.1",
+    "pydantic>=2.6.1",
+    "pydantic-settings>=2.1.0",
+    "httpx>=0.27.0",
+    "python-dateutil>=2.8.2",
+]
+
+[build-system]
+requires = ["setuptools", "wheel"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+python_files = "test_*.py"
+python_classes = "Test*"
+python_functions = "test_*"
+addopts = "-v --tb=short"
+
+[tool.black]
+line-length = 88
+target-version = ['py313']
+include = '\.pyi?$'
+exclude = '''
+/(
+    \.eggs
+  | \.git
+  | \.hg
+  | \.mypy_cache
+  | \.tox
+  | \.venv
+  | build
+  | dist
+  | migrations
+)/
+'''
+
+[tool.isort]
+profile = "black"
+multi_line_output = 3
+line_length = 88
