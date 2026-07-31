@@ -1,0 +1,21 @@
+{
+  "name": "KlashAI",
+  "short_name": "KlashAI",
+  "description": "Next-generation AI platform for gaming, coding, server management, and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "theme_color": "#1f2937",
+  "background_color": "#1f2937",
+  "icons": [
+    {
+      "src": "/icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "/icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
