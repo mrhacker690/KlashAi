@@ -9,6 +9,7 @@ export default defineConfig({
       registerType: "autoUpdate",
       workbox: {
         globPatterns: ["**/*.{js,css,html,ico,png,svg}"],
+        globIgnores: ["**/node_modules/**/*", "sw.js", "workbox-*.js"],
       },
       manifest: {
         name: "KlashAI",
@@ -39,6 +40,5 @@ export default defineConfig({
       },
     },
   },
-  // For Vercel
   base: process.env.NODE_ENV === "production" ? "/" : "/",
 });
