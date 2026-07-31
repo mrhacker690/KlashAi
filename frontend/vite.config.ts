@@ -13,8 +13,8 @@ export default defineConfig({
       manifest: {
         name: "KlashAI",
         short_name: "KlashAI",
-        description: "Next-generation AI platform for gaming and coding",
-        theme_color: "#0f172a",
+        description: "Next-generation AI platform for gaming, coding, server management, and more.",
+        theme_color: "#1f2937",
         icons: [
           {
             src: "/icon-192.png",
@@ -31,7 +31,14 @@ export default defineConfig({
     }),
   ],
   server: {
-    host: "0.0.0.0",
     port: 3000,
+    proxy: {
+      "/api": {
+        target: process.env.VITE_API_BASE_URL || "http://localhost:8000",
+        changeOrigin: true,
+      },
+    },
   },
+  // For Vercel
+  base: process.env.NODE_ENV === "production" ? "/" : "/",
 });
