@@ -1,20 +1,9 @@
-[build-system]
-requires = ["setuptools>=61.0", "wheel"]
-build-backend = "setuptools.build_meta"
-
-[project]
-name = "klashai-backend"
-version = "0.1.0"
-description = "KlashAI Backend API"
-authors = [
-    { name = "KlashAI Team" },
-]
 dependencies = [
     "fastapi==0.109.2",
     "uvicorn[standard]==0.27.1",
     "sqlalchemy[asyncpg]==2.0.28",
     "alembic==1.13.1",
-    "pydantic-settings==2.1.1",
+    "pydantic-settings==2.1.1",  # ← Remove this line
     "python-dotenv==1.0.1",
     "python-jose[cryptography]==3.3.0",
     "passlib[bcrypt]==1.7.4",
@@ -22,9 +11,3 @@ dependencies = [
     "celery==5.3.6",
     "psycopg2-binary==2.9.9",
 ]
-requires-python = ">=3.12"
-
-[tool.setuptools.packages.find]
-where = ["."]
-include = ["app*", "migrations*"]
-exclude = ["tests*", "docs*"]
